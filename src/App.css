@@ -1,5 +1,6 @@
 #root {
   max-width: 1280px;
+  height: 100vh;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -27,6 +28,8 @@
   max-width: 400px;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid black;
 }

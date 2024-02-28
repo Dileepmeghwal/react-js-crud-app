@@ -7,6 +7,8 @@ const EmployeeCrud = () => {
   const [emplist, setEmplist] = useState([]);
   const [open, setOpen] = useState(false);
   const [selectId, setSelectId] = useState(null);
+  const [search, setSearch] = useState("");
+  const [searchQuery, setSearchQuery] = useState([]);
 
   useEffect(() => {
     getAllEmployee();
@@ -18,6 +20,7 @@ const EmployeeCrud = () => {
       .then((res) => {
         console.log(res.data);
         setEmplist(res.data);
+        setSearchQuery(res.data);
       })
       .catch((err) => console.log(err));
   };
@@ -48,10 +51,44 @@ const EmployeeCrud = () => {
     setOpen(true);
     setSelectId(id);
   };
+
+  const handleDelete = (id) => {
+    axios
+      .delete(`${API_BASE_URL}/employee/${id}`)
+      .then((res) => {
+        console.log(res.data);
+        getAllEmployee();
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const handleSearch = (e) => {
+    const text = e.target.value;
+    setSearch(text);
+    if (text === "") {
+      setEmplist(searchQuery);
+    } else {
+      const searchFilterd = searchQuery.filter(
+        (item) =>
+          item.name.toLowerCase() && item.company.includes(text.toLowerCase())
+      );
+      setEmplist(searchFilterd);
+    }
+  };
+
+  //   if (emplist.length <= 0) return "no data found !";
   return (
     <div>
-      <h4>Employee Data</h4>
-      <button onClick={() => setOpen(true)}>Create New </button>
+      <div className="d-flex justify-content-between mb-3">
+        <h4>Employee Data</h4>
+        <input
+          type="text"
+          placeholder="Search"
+          value={search}
+          onChange={handleSearch}
+        />
+        <button onClick={() => setOpen(true)}>Create New </button>
+      </div>
 
       <ModelBox
         onClose={() => setOpen(false)}
@@ -59,7 +96,7 @@ const EmployeeCrud = () => {
         handleSave={handleSave}
         selectId={selectId}
       />
-      <table width={"50%"}>
+      <table width={"100%"}>
         <tr>
           <th>Company</th>
           <th>Name</th>
@@ -73,6 +110,7 @@ const EmployeeCrud = () => {
               <td>{item.email}</td>
               <td>
                 <button onClick={() => handleEdit(item)}>Edit</button>
+                <button onClick={() => handleDelete(item.id)}>Delete</button>
               </td>
             </tr>
           ))}

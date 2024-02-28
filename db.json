@@ -48,18 +48,6 @@
   ],
   "employee": [
     {
-      "id": "0d51",
-      "company": "google",
-      "name": "test",
-      "email": "test@gmail.com"
-    },
-    {
-      "id": "1f38",
-      "company": "google",
-      "name": "test1",
-      "email": "test1@gmail.com"
-    },
-    {
       "id": "ff09",
       "company": "amazon",
       "name": "demo",
@@ -70,6 +58,18 @@
       "name": "dileep meghwal",
       "email": "dileep.com",
       "id": "bec9"
+    },
+    {
+      "company": "alise jhon",
+      "name": "emire",
+      "email": "em@mail.com",
+      "id": "a070"
+    },
+    {
+      "id": "5e59",
+      "company": "google",
+      "name": "simar kaue",
+      "email": "sim@google.com"
     }
   ]
 }

@@ -63,10 +63,10 @@ export default function ModelBox({ selectId, open, onClose, handleSave }) {
 
             <button
               type="submit"
-              class="btn btn-primary mt-3"
+              class="btn btn-primary mt-3 mx-4"
               onClick={saveData}
             >
-              Save
+              {selectId ? "Update" : "Save"}
             </button>
             <button
               type="submit"
