@@ -1,0 +1,75 @@
+{
+  "items": [
+    {
+      "name": "MacBook Pro",
+      "price": "1,22999",
+      "id": "6c90"
+    },
+    {
+      "name": "test dra",
+      "price": "12121",
+      "id": "3dac"
+    },
+    {
+      "id": "92f6",
+      "name": "Apple",
+      "price": "1000"
+    },
+    {
+      "id": "f22c",
+      "name": "orange",
+      "price": "1221"
+    },
+    {
+      "name": "ram",
+      "price": "22",
+      "id": "dcc4"
+    },
+    {
+      "name": "wox",
+      "price": "4444",
+      "id": "88c4"
+    },
+    {
+      "name": "iscon",
+      "price": "12",
+      "id": "86e8"
+    },
+    {
+      "id": "4481",
+      "name": "airdrop",
+      "price": "12"
+    },
+    {
+      "id": "acba",
+      "name": "cutes",
+      "price": "433"
+    }
+  ],
+  "employee": [
+    {
+      "id": "0d51",
+      "company": "google",
+      "name": "test",
+      "email": "test@gmail.com"
+    },
+    {
+      "id": "1f38",
+      "company": "google",
+      "name": "test1",
+      "email": "test1@gmail.com"
+    },
+    {
+      "id": "ff09",
+      "company": "amazon",
+      "name": "demo",
+      "email": "demo.com"
+    },
+    {
+      "company": "delogico system",
+      "name": "dileep meghwal",
+      "email": "dileep.com",
+      "id": "bec9"
+    }
+  ]
+}
